@@ -1,0 +1,1109 @@
+/**
+ * Page name
+ * Copyright 2017
+ * Author
+ * Licensed 
+ */
+/*------------------------------------*\
+    Content
+\*------------------------------------*/
+/**
+ * Content............You're reading it!
+ * Globel...............Set common style
+ * Layout...........Set grid
+ * Components...........Set components styles
+ */
+ 
+ 
+/*------------------------------------*\
+    Globel
+\*------------------------------------*/
+*{
+	-webkit-box-sizing: border-box; /* 針對舊版 Chrome/Safari */
+    -moz-box-sizing: border-box;    /* 針對舊版 Firefox */
+	
+	box-sizing: border-box;
+	position: relative;
+}
+html,body{
+	font-family: 'ヒラギノ明朝 ProN W3', arial;
+}
+h1,h2,h3,h4,h5,h6,p{
+	padding: 0;
+	margin: 0;
+}
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+	color: #9F353A;
+	outline: none;
+}
+
+/*------------------------------------*\
+    Layout
+\*------------------------------------*/
+.container{
+	max-width: 1200px;
+	margin: 0 auto;
+	/*border: 1px solid #ccc;*/
+	height: 100%;
+	padding-right: 16px;
+	padding-left: 16px;
+}
+.row{
+	margin-left: -16px;
+	margin-right: -16px;
+}
+.row:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.col-lg-6,.col-lg-4,.col-lg-3,
+.col-md-6,.col-md-12,
+.col-sm-12{
+	float: left;
+	/*border: 1px solid red;*/
+	padding-left: 16px;
+	padding-right: 16px;
+}
+.col-lg-6{
+	width: 50%;
+}
+.col-lg-4{
+	width: 33.3333333%;
+}
+.col-lg-3{
+	width: 25%;
+}
+@media (max-width: 768px){
+	.col-md-6{
+		width: 50%;
+	}
+	.col-md-12{
+		width: 100%;
+	}
+}
+@media (max-width: 576px){
+	.col-sm-12{
+		width: 100%;
+	}
+}
+/*------------------------------------*\
+    Components
+\*------------------------------------*/
+
+/* btn */
+.btn{
+	display: inline-block;
+	font-size: 16px;
+	line-height: 24px;
+	padding: 4px 16px;
+	border: 1px solid #fff;
+	color: #fff;
+	border-radius: 4px;
+	transition: all 0.3s;
+	cursor: pointer;
+	outline: none;
+}
+/* 大小設定 */
+.btn.btn-lg{
+	padding: 8px 32px;
+}
+/* 主要按鈕 */
+.btn.btn-primary{
+	background-color: #F4A7B9;
+	border: 1px solid #F4A7B9;
+	color: #fff;
+}
+.btn.btn-primary:hover{
+	background-color: #E87A90;
+	
+}
+/* 次要按鈕 */
+.btn.btn-secondary{
+	border: 1px solid #F4A7B9;
+	color: #F4A7B9;
+}
+.btn.btn-secondary:hover{
+	background-color: #E87A90;
+	color: #fff;
+}
+.btn-group-center{
+	text-align: center;
+}
+.btn-group-center .btn{
+	margin-left: 12px;
+	margin-right: 12px;
+}
+.btn-group-right{
+	text-align: right;
+}
+.btn-group-right .btn{
+	margin-left: 24px;
+}
+@media (max-width: 576px){
+	.btn-group-center{
+		display: flex;
+		flex-direction: column;
+		width: 240px;
+		margin: 0 auto;
+	}
+	.btn-group-center .btn{
+		margin-bottom: 24px;
+	}
+	.btn-group-center .btn:last-child{
+		margin-bottom: 0;
+	}
+}
+
+/* image-container */
+.image-container{
+	width: 100%;
+}
+.image-container:before{
+	content: '';
+	display: block;
+	width: 100%;
+	padding-top: 75%;
+}
+.image-container .image{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+/* navbar */
+.navbar{
+	height: 100px;
+	/*background-color: rgba(0,0,0,0.8);*/
+	border-bottom: 1px solid #666;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 500;
+	width: 100%;
+	transition: all 0.3s;
+}
+.navbar.active{
+	height: 64px;
+	border-bottom: 0px;
+	background-color: rgba(255, 182, 193,0.8);
+}
+.navbar .brand{
+	display: inline-block;
+	width: 200px;
+	height: 80px;
+	background-image: url('../images/common/logo2.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	transition: all 0.3s;
+}
+.navbar.active .brand{
+	width: 160px;
+	height: 64px;
+}
+.navbar .nav{
+	float: right;
+}
+.navbar .nav .nav-item{
+	float: left;
+}
+.navbar .nav .nav-link{
+	color: #fefefe;
+	display: block;
+	line-height: 24px;
+	padding: 20px 16px;
+	transition: all 0.3s;
+}
+.navbar .nav .nav-link:hover,
+.navbar .nav .nav-item.active .nav-link{
+	color: #B5495B;
+}
+@media (max-width: 768px){
+	.navbar .nav{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #000;
+		z-index: 500;
+
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s;
+	}
+	.navbar .nav.active{
+		opacity: 1;
+		visibility: visible;
+	}
+	.navbar .nav .nav-item{
+		float: none;
+	}
+	.navbar .nav .nav-item .nav-link{
+		width: 100%;
+		padding: 12px 16px;
+		text-align: center;
+	}
+}
+
+/* menu-toggle */
+.menu-toggle{
+	width: 48px;
+	height: 48px;
+	float: right;
+	margin-top: 8px;
+	padding: 12px 8px;
+	display: none;
+	z-index: 600;
+}
+@media (max-width: 768px){
+	.menu-toggle{
+		display: block;
+	}
+}
+.menu-toggle span{
+	width: 32px;
+	height: 2px;
+	display: block;
+	background-color: #d5a26f;
+	/*margin-bottom: 8px;*/
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%,0);
+	transition: all 0.3s;
+}
+.menu-toggle span:nth-child(1){
+	top: 12px;
+}
+.menu-toggle.active span:nth-child(1){
+	top: 50%;
+	transform: translate(-50%,-50%) rotate(45deg);
+}
+.menu-toggle span:nth-child(2){
+	top: 22px;
+}
+.menu-toggle.active span:nth-child(2){
+	opacity: 0;
+}
+.menu-toggle span:nth-child(3){
+	top: 32px;
+}
+.menu-toggle.active span:nth-child(3){
+	top: 50%;
+	transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+
+/* close-btn */
+.close-btn{
+	width: 48px;
+	height: 48px;
+	position: absolute;
+	right: 16px;
+	top: 8px;
+	display: none;
+}
+@media (max-width: 768px){
+	.close-btn{
+		display: block;
+	}
+}
+.close-btn span{
+	width: 40px;
+	height: 2px;
+	background-color: #d5a26f;
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.close-btn span:nth-child(1){
+	transform: translate(-50%,-50%) rotate(45deg);
+}
+.close-btn span:nth-child(2){
+	transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+/* hero */
+.hero{
+	padding-top: 200px;
+	padding-bottom: 200px;
+}
+@media (max-width: 768px){
+	.hero{
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+}
+.hero.hero-bg-white{
+	background-color:#8E354A;
+}
+.hero.hero-bg-black{
+	background-color:#1C1C1C;
+}
+.hero.hero-bg-grey{
+	background-color:#cdcdcd;
+}
+
+/* jumbotron */
+.jumbotron{
+	border: 1px solid #000;
+	padding-top: 184px;
+	padding-bottom: 120px;
+	/*background-image: url('../images/bg/bg001.jpg');*/
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.jumbotron .mask-dark{
+	background-color: rgba(0,0,0,0.2);
+}
+.jumbotron .logo-image{
+	width: 320px;
+	height: 320px;
+	background-image: url('../images/common/logo1-01.png');
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+}
+@media (max-width: 768px){
+	.jumbotron{
+		padding-top: 144px;
+		padding-bottom: 80px;
+	}
+	.jumbotron .logo-image{
+		width: 200px;
+		height: 200px;
+	}
+}
+
+/* mask */
+.mask-dark{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: rgba(0,0,0,0.7);
+}
+
+/* about-preview */
+@media (max-width: 768px){
+	.about-preview{
+		margin-bottom: 48px;
+	}
+}
+.about-preview .title{
+	font-size: 32px;
+	color: #333;
+	margin-bottom: 24px;
+	margin-top: 80px;
+}
+@media (max-width: 992px){
+	.about-preview .title{
+		margin-top: 0;
+	}
+}
+.about-preview .para{
+	font-size: 16px;
+	line-height: 32px;
+	color: #333;
+	margin-bottom: 24px;
+}
+
+/* section-intro */
+/* ==========================================================================
+   1. 共用的基本樣式（保留置中、間距、字型大小與行高）
+   ========================================================================== */
+.section-intro {
+	text-align: center;
+	margin-bottom: 40px;
+}
+.section-intro .title {
+	font-size: 48px;
+	margin-bottom: 24px;
+}
+.section-intro .para {
+	font-size: 16px;
+	line-height: 32px;
+}
+
+/* ==========================================================================
+   2. 根據不同區塊，單獨控制文字顏色
+   ========================================================================== */
+/* 活動家グループ */
+.hero-bg-white .section-intro .title{
+	color: #fff;
+}
+.hero-bg-white .section-intro .para{
+	color: #fff;
+}
+/* アルバム */
+.hero-bg-black .section-intro .title {
+	color: #fff; 
+}
+
+.hero-bg-black .section-intro .para {
+	color: #fff; 
+}
+/* にじさんじ */
+.hero-bg-grey .section-intro .title {
+	color: #333;
+}
+.hero-bg-grey .section-intro .para {
+	color: #333;
+}
+
+.section-intro{
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.section-intro .title{
+	font-size: 48px;
+	color: #333;
+	margin-bottom: 24px;
+}
+.section-intro .para{
+	font-size: 16px;
+	line-height: 32px;
+	color: #333;
+}
+@media (max-width: 768px){
+	.section-intro .title{
+		font-size: 32px;
+	}
+}
+
+/* service-item */
+@media (max-width: 768px){
+	.service-item{
+		margin-bottom: 48px;
+	}
+	.service-group [class^="col-"]:last-child .service-item{
+		margin-bottom: 0;
+	}
+}
+.service-item .preview{
+	padding-top: 16px;
+}
+.service-item .title{
+	font-size: 24px;
+	color: #fff;
+	margin-bottom: 8px;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.service-item .subtitle{
+	font-size: 14px;
+	color: #F596AA;
+	margin-bottom: 16px;
+}
+.service-item .para{
+	color: #fff;
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 24px;
+
+	/*border: 1px solid #000;*/
+	height: 72px;
+	overflow: hidden;
+}
+
+/* reservation */
+.reservation{
+	background-image: url('../images/bg/bg002.jpg');
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.reservation .section-intro .title,
+.reservation .section-intro .para{
+	color: #fefefe;
+}
+
+/* menu-list */
+.menu-list{
+	margin-bottom: 64px;
+}
+.menu-list:last-child{
+	margin-bottom: 0;
+}
+.menu-list .title-bar{
+	/*border: 1px solid #000;*/
+	margin-bottom: 24px;
+}
+.menu-list .title-bar:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.menu-list .title-bar .title{
+	font-size: 24px;
+	line-height: 40px;
+	color: #F596AA;
+	float: left;
+	padding-left: 16px;
+}
+.menu-list .title-bar .title:before{
+	content: '';
+	display: inline-block;
+	width: 4px;
+	height: 24px;
+	background-color: #F596AA;
+	
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translate(0,-50%);
+}
+.menu-list .title-bar .btn{
+	padding-top: 8px;
+	padding-bottom: 8px;
+	float: right;
+}
+.menu-list .list-item .image-container{
+	margin-bottom: 16px;
+}
+.menu-list .list-item .image-container:before{
+	padding-top: 100%;
+}
+.menu-list .list-item .title{
+	font-size: 18px;
+	color: #fff;
+	line-height: 24px;
+	margin-bottom: 8px;
+}
+.menu-list .list-item .subtitle{
+	font-size: 14px;
+	color: #F596AA;
+}
+@media (max-width: 768px){
+	.menu-list .list-item{
+		/*margin-bottom: 48px;*/
+	}
+}
+
+/* owl-carousel */
+.owl-theme .owl-dots{
+	display: flex;
+	justify-content: center;
+	margin-top: 24px;
+}
+@media (max-width: 768px){
+	.owl-theme .owl-dots{
+		margin-bottom: 24px;
+	}
+}
+.owl-theme button.owl-dot{
+	display: inline-block;
+	vertical-align: top;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background-color: #ccc;
+	outline: none;
+	margin: 0 4px;
+}
+.owl-theme button.owl-dot.active{
+	background-color: #F596AA;
+}
+.owl-theme .owl-nav{
+	position: absolute;
+	top: calc((100% - 106px) / 2);
+	width: 100%;
+}
+.owl-theme .owl-nav button.owl-prev,
+.owl-theme .owl-nav button.owl-next{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #F596AA;
+	outline: none;
+	color: #fff;
+	box-shadow: 0 3px 5px rgba(0,0,0,0.5);
+	position: absolute;
+	transform: translate(0,-50%);
+	top: 0;
+	opacity: 0.5;
+	transition: all 0.3s;
+}
+.owl-theme:hover .owl-nav button.owl-prev,
+.owl-theme:hover .owl-nav button.owl-next{
+	opacity: 1;
+}
+@media (max-width: 768px){
+	.owl-theme .owl-nav button.owl-prev,
+	.owl-theme .owl-nav button.owl-next{
+		opacity: 1;
+	}
+}
+.owl-theme .owl-nav button.owl-prev{
+	left: -16px;
+}
+.owl-theme .owl-nav button.owl-next{
+	right: -16px;
+}
+
+
+
+/* contact */
+.contact-info{
+	padding-top: 40px;
+}
+.contact-info .info-item{
+	margin-bottom: 24px;
+}
+.contact-info .info-item .title{
+	color: #B5495B;
+	margin-bottom: 16px;
+}
+.contact-info .info-item .title span{
+	display: inline-block;
+	border-bottom: 2px solid #F596AA ;
+	line-height: 36px;
+}
+.contact-info .info-item .info span{
+	color:#60373E;
+}
+
+.contact-info .info-item .info{
+	line-height: 32px;
+
+}
+.map-container{
+	width: 100%;
+	padding-top: 75%;
+}
+.map-container iframe{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* footer */
+.footer{
+	background-image: url('../images/bg/bg003.jpg');
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.footer .brand{
+	width: 240px;
+	height: 240px;
+	display: block;
+	margin: 0 auto;
+	background-image: url('../images/common/logo-w.png');
+	background-position: center;
+	background-size: contain;
+}
+@media (max-width: 768px){
+	.footer .brand{
+		width: 200px;
+		height: 200px;
+	}
+}
+.footer .nav{
+	display: flex;
+	justify-content: center;
+}
+.footer .nav .nav-link{
+	display: block;
+	color:#F596AA;
+	padding: 24px;
+	line-height: 24px;
+	transition: all 0.3s;
+}
+@media (max-width: 768px){
+	.footer .nav .nav-link{
+		padding: 24px 8px;
+	}
+}
+.footer .nav .nav-link:hover{
+	color: #d5a26f;
+}
+.footer .copyright{
+	background-color: rgba(0,0,0,0.8);
+	color: #ddd;
+	text-align: center;
+	line-height: 24px;
+	padding: 16px 0;
+	font-size: 14px;
+}
+.footer .section-intro .title,
+.footer .section-intro .para{
+	color: #fff;
+}
+
+/* form */
+.form{
+	max-width: 400px;
+	margin: 0 auto;
+}
+.form__item{
+	display: flex;
+	margin-bottom: 32px;
+	align-items: center;
+}
+.form__label{
+	color: #fff;
+	margin-right: 16px;
+}
+.form__input{
+	display: inline-block;
+	flex: 1;
+	border: 1px solid #fff;
+	line-height: 32px;
+	background-color: transparent;
+	color: #fff;
+	border-radius: 4px;
+	padding: 0 8px;
+	outline: none;
+}
+.form__input:focus{
+	border: 1px solid #d5a26f;
+}
+.form__submit{
+	flex: 1;
+}
+
+/* hidden */
+.desktop-hidden{
+	display: none;
+}
+@media (max-width: 768px){
+	.desktop-hidden{
+		display: block;
+	}
+	.mobile-hidden{
+		display: none;
+	}
+}
+
+/* parallax */
+.rellax{
+	position: absolute;
+}
+@media (max-width: 1024px){
+	.rellax{
+		display: none;
+	}
+}
+.parallax-1{
+	width: 20%;
+	right: 3%;
+	top: 0%;
+}
+.parallax-2{
+	width: 20%;
+	left: 0;
+	top: 10%;
+}
+.parallax-3{
+	width: 20%;
+	right: 0;
+	top: -10%;
+}
+.parallax-4{
+	width: 30%;
+	left: -5%;
+	top: 0%;
+}
+.parallax-5{
+	width: 20%;
+	right: 0;
+	top: -5%;
+}
+.parallax-6{
+	width: 20%;
+	left: -2%;
+	top: -9%;
+}
+.parallax-7{
+	width: 18%;
+	right: 0%;
+	bottom: 7%;
+}
+
+/* evaluation page */
+
+/* page title */
+.page-title{
+	padding-top: 160px;
+	padding-bottom: 76px;
+	border: 1px solid #000;
+	background-image: url('../images/bg/bg001.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.page-title .section-intro{
+	margin-bottom: 0;
+}
+.page-title .section-intro .title,
+.page-title .section-intro .para{
+	color: #fff;
+}
+
+/* eval card */
+.eval-card{
+	padding: 16px;
+	box-shadow: 0 3px 20px rgba(0,0,0,0.3);
+	margin-bottom: 32px;
+}
+.eval-card .image{
+	display: block;
+	width: 100%;
+	margin-bottom: 16px;
+}
+.eval-card .para{
+	line-height: 32px;
+	font-size: 16px;
+}
+
+.masonry-row{
+	margin-left: -16px;
+	margin-right: -16px;
+}
+.masonry-col{
+	padding-left: 16px;
+	padding-right: 16px;
+	width: 33.333333%;
+}
+@media (max-width: 768px){
+	.masonry-col{
+		width: 50%;
+	}
+}
+@media (max-width: 576px){
+	.masonry-col{
+		width: 100%;
+	}
+}
+::selection {
+    color: #D0104C;
+    background: #F8C3CD;
+}
+::-moz-selection {
+    color: #D0104C;
+    background: #F8C3CD;
+}
+/* ==========================================================================
+   1. 基礎按鈕設定（原本的樣式保留，並加上 overflow 與 position 確保特效正常）
+   ========================================================================== */
+.btn {
+	display: inline-block;
+	font-size: 16px;
+	line-height: 24px;
+	padding: 4px 16px;
+	border: 1px solid #fff;
+	color: #fff;
+	border-radius: 4px;
+	transition: all 0.3s;
+	cursor: pointer;
+	outline: none;
+	
+	/* 新增：確保內部特效（如內三角）超出時隱藏，且定位正常 */
+	position: relative;
+	overflow: hidden;
+}
+
+/* 大大小設定 */
+.btn.btn-lg {
+	padding: 8px 32px;
+}
+
+/* ==========================================================================
+   2. 主要按鈕（套用：漸層波浪流動 + 懸停發光效果）
+   ========================================================================== */
+.btn.btn-primary {
+	/* 使用原本的粉色與深粉色做漸層，並放大背景尺寸 */
+	background: linear-gradient(45deg, #F4A7B9, #E87A90, #f8b9c7, #F4A7B9);
+	background-size: 400% 400%; 
+	border: 1px solid #F4A7B9;
+	color: #fff;
+	box-shadow: 0 0 0 rgba(244, 167, 185, 0);
+	transition: all 0.4s ease-in-out;
+}
+
+.btn.btn-primary:hover {
+	/* 懸停時移動背景產生流動感，並觸發粉色系外發光 */
+	background-position: 100% 50%;
+	box-shadow: 0 0 15px #E87A90, 0 0 30px rgba(244, 167, 185, 0.6);
+	transform: translateY(-2px); /* 輕微往上浮起 */
+}
+
+/* ==========================================================================
+   3. 次要按鈕（套用：內三角滑動閃過 + 邊框發光效果）
+   ========================================================================== */
+.btn.btn-secondary {
+	border: 1px solid #F4A7B9;
+	color: #FEDFE1;
+	background-color: transparent;
+	transition: all 0.3s ease;
+	box-shadow: 0 0 0 rgba(244, 167, 185, 0);
+}
+
+/* 製作內部的斜切內三角滑塊 */
+.btn.btn-secondary::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -150%; /* 平常藏在左邊外面 */
+	width: 150%;
+	height: 100%;
+	/* 滑塊使用原本的深粉色 */
+	background: linear-gradient(90deg, transparent, rgba(232, 122, 144, 0.8), transparent);
+	clip-path: polygon(0 0, 100% 0, 60% 100%, 0% 100%); /* 切出斜三角/梯形 */
+	transition: all 0.6s ease;
+	z-index: 1;
+}
+
+.btn.btn-secondary:hover {
+	color: #fff;
+	background-color: rgba(232, 122, 144, 0.1); /* 懸停時底色稍微變深 */
+	border-color: #E87A90;
+	box-shadow: 0 0 15px #E87A90; /* 觸發發光 */
+}
+
+/* 懸停時，內部的三角形向右滑過 */
+.btn.btn-secondary:hover::before {
+	left: 100%;
+}
+
+/* ==========================================================================
+   4. 按鈕群組與響應式排版（維持你原本的設定）
+   ========================================================================== */
+.btn-group-center {
+	text-align: center;
+}
+.btn-group-center .btn {
+	margin-left: 12px;
+	margin-right: 12px;
+}
+.btn-group-right {
+	text-align: right;
+}
+.btn-group-right .btn {
+	margin-left: 24px;
+}
+@media (max-width: 576px) {
+	.btn-group-center {
+		display: flex;
+		flex-direction: column;
+		width: 240px;
+		margin: 0 auto;
+	}
+	.btn-group-center .btn {
+		margin-bottom: 24px;
+	}
+	.btn-group-center .btn:last-child {
+		margin-bottom: 0;
+	}
+}
+
+/* ==========================================================================
+   5. 關閉按鈕（套用：暗色外框 + 內三角滑動 + 金色發光）
+   ========================================================================== */
+.close-btn {
+	width: 48px;
+	height: 48px;
+	position: absolute;
+	right: 16px;
+	top: 8px;
+	display: none;
+	
+	/* 新增：升級關閉按鈕外觀 */
+	background-color: #111111; /* 暗色底讓發光更明顯 */
+	border: 1px solid #d5a26f;  /* 金色邊框 */
+	border-radius: 4px;
+	cursor: pointer;
+	overflow: hidden; 
+	box-shadow: 0 0 5px rgba(213, 162, 111, 0.2);
+	transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+	.close-btn {
+		display: block;
+	}
+}
+
+/* 關閉按鈕內部的滑動三角 */
+.close-btn::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -150%;
+	width: 150%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(213, 162, 111, 0.6), transparent);
+	clip-path: polygon(0 0, 100% 0, 60% 100%, 0% 100%);
+	transition: all 0.6s ease;
+	z-index: 1;
+}
+
+/* 懸停效果：觸發發光與滑動 */
+.close-btn:hover {
+	box-shadow: 0 0 15px #d5a26f, 0 0 25px rgba(213, 162, 111, 0.5);
+	border-color: #ffffff;
+}
+.close-btn:hover::before {
+	left: 100%;
+}
+
+/* 關閉按鈕內部的 X 線條 */
+.close-btn span {
+	width: 28px; /* 稍微縮小線條以完美配合 48px 外框 */
+	height: 2px;
+	background-color: #d5a26f;
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 2; /* 確保在滑塊上方 */
+	transition: all 0.3s ease;
+}
+.close-btn span:nth-child(1) {
+	transform: translate(-50%,-50%) rotate(45deg);
+}
+.close-btn span:nth-child(2) {
+	transform: translate(-50%,-50%) rotate(-45deg);
+}
+.close-btn:hover span {
+	background-color: #ffffff; /* 懸停時 X 線條變白 */
+}
+
+/* ==========================================================================
+   6. 其他特定按鈕（維持原本設定）
+   ========================================================================== */
+.menu-list .title-bar .btn {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	float: right;
+}
